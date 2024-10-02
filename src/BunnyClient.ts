@@ -36,6 +36,7 @@ class _Client {
   static FileDownload = (k: string, url: string) => axios.get(url, {
     baseURL: "https://storage.bunnycdn.com/",
     timeout: 2000000000,
+    responseType: 'arraybuffer',
     maxContentLength: Number.POSITIVE_INFINITY,
     headers: {
       'AccessKey': Config.getApiKey(k, "storages"),
